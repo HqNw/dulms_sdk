@@ -2,13 +2,13 @@ from bs4 import BeautifulSoup
 import requests
 
 class Auth:
-  def __init__(self, url) -> None:
+  def __init__(self, url: str) -> None:
 
     self.url = url
     self.cookies = {}
 
 
-  def login(self, username, password):
+  def login(self, username: str, password: str) -> None:
 
     html = requests.get(self.url + "/Login.aspx")
     html = BeautifulSoup(html.text, "html.parser")
@@ -18,7 +18,7 @@ class Auth:
     __EVENTVALIDATION = html.body.find('input', attrs={'id':'__EVENTVALIDATION'}).get('value')
 
     
-    data = {
+    data: dict = {
       "__VIEWSTATE" : __VIEWSTATE,
       "__VIEWSTATEGENERATOR" : __VIEWSTATEGENERATOR,
       "__EVENTVALIDATION" : __EVENTVALIDATION,
@@ -34,18 +34,23 @@ class Auth:
     self.cookies = res.cookies
 
 
-  def get_user_data (self):
+  def get_user_data (self) -> dict:
     req = requests.get(self.url + "/Profile/GetStudentAcademicData", cookies=self.cookies)
     return req.json()[0]
 
-  def get_ass(self):
-    pass
+  def get_assignments(self) -> list:
+    req = requests.get(self.url + "/Assignment/GetStudentAssignments", cookies=self.cookies)
+    return req.json()
 
+  def get_quizzes(self)-> list:
+    req = requests.get(self.url + "/Quizzes/GetStudentQuizzes", cookies=self.cookies)
+    return req.json()
 
-
+  def get_cookies(self) -> dict:
+    return self.cookies.get_dict()
 
 if __name__ == "__main__":
-  print("testing auth lib")
+  print("testing sdk")
     
 
   
