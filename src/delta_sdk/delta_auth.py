@@ -8,7 +8,7 @@ class Auth:
     self.cookies = {}
 
 
-  def auth(self, username, password):
+  def login(self, username, password):
 
     html = requests.get(self.url + "/Login.aspx")
     html = BeautifulSoup(html.text, "html.parser")

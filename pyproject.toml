@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "delta_auth_HqNw"
+name = "delta_sdk"
 version = "0.0.1"
 authors = [
   { name="HqNw(ahmed reda)", email="redalabeb166@gmail.com" },
