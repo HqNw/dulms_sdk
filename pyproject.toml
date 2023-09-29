@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "delta_sdk"
-version = "0.0.12"
+version = "0.0.13"
 authors = [
   { name="HqNw(ahmed reda)", email="redalabeb166@gmail.com" },
 ]
