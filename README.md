@@ -7,7 +7,10 @@ this package is still in development and the responses are pure from the server 
 
 ```
 
-
+# installation
+```bash
+pip install delta-sdk
+```
 
 # usage
 ## importing
