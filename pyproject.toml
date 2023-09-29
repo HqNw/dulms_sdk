@@ -11,6 +11,10 @@ authors = [
 description = "A small package to help authenticate and use dulms api"
 readme = "README.md"
 requires-python = ">=3.7"
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3",
