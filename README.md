@@ -20,14 +20,14 @@ from delta_sdk import delta_auth
 
 ## login
 ```python
-auth = delta_auth.login("https://dulms.deltauniv.edu.eg")
-auth.auth("USERNAME", "PASSWORD")
+auth = delta_auth.Auth("https://dulms.deltauniv.edu.eg")
+auth.login("USERNAME", "PASSWORD")
 ```
 
 ## get user data
 ```python
-auth = delta_auth.login("https://dulms.deltauniv.edu.eg")
-auth.auth("USERNAME", "PASSWORD")
+auth = delta_auth.Auth("https://dulms.deltauniv.edu.eg")
+auth.login("USERNAME", "PASSWORD")
 
 data = auth.get_user_data()
 print(data)
@@ -36,7 +36,7 @@ print(data)
 ## get assginments
 ```python
 auth = delta_auth.Auth('https://dulms.deltauniv.edu.eg')
-auth.auth("USERNAME", "PASSWORD")
+auth.login("USERNAME", "PASSWORD")
 
 data = auth.get_assignments()
 print(data)
@@ -45,7 +45,7 @@ print(data)
 ## get quizzes
 ```python
 auth = Auth('https://dulms.deltauniv.edu.eg')
-auth.auth("USERNAME", "PASSWORD")
+auth.login("USERNAME", "PASSWORD")
 
 data = auth.get_quizzes()
 print(data)
@@ -55,7 +55,7 @@ print(data)
 
 ```python
 auth = Auth('https://dulms.deltauniv.edu.eg')
-auth.auth("USERNAME", "PASSWORD")
+auth.login("USERNAME", "PASSWORD")
 
 cookies = auth.get_cookies()
 print(coockies['Id'])
